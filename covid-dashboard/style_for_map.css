@@ -98,6 +98,10 @@ main{
     color: rgb(230, 0, 0);
     font-size: 3rem;
 }
+#newGlobalCases{
+    color: rgb(233, 161, 161);
+    font-size: 1.2rem;
+}
 
 /* Cases by Country/Region/Sovereignty */
 .casesByCountry{
@@ -126,11 +130,18 @@ main{
 /* Global Deaths */
 .globalDeaths #globalDeaths{
     font-size: 2rem;
+    color: coral;
+}
+#newDeaths{
+    color: coral;
 }
 
 /* Global Recovered */
 .globalRecovered #globalRecovered{
     font-size: 2rem;
+    color: rgb(127, 255, 0);
+}
+#newRecovered{
     color: rgb(127, 255, 0);
 }
 

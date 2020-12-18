@@ -19,6 +19,7 @@
         <div class="globalCases cases">
             <span class="headers">Global Cases</span>
             <div id="globalCases">date here</div>
+            <div id="newGlobalCases">date here</div>
         </div>
 
         <div class="casesByCountry cases">
@@ -35,13 +36,15 @@
             <div class="globalDeaths">
                 <span class="headers">Global Deaths</span>
                 <div id="globalDeaths">1665211</div>
-                <button class="today">today</button>
+                <div id="newDeaths">date here</div>
+                <button class="today global-deaths-recovered">today</button>
                 <div id="dethsCasesByCountry">date here</div>
             </div>
             <div class="globalRecovered hide">
                 <span class="headers">Global Recovered</span>
                 <div id="globalRecovered">date here</div>
-                <button class="today">today</button>
+                <div id="newRecovered">date here</div>
+                <button class="today global-deaths-recovered">today</button>
                 <div id="recoveredCasesByCountry">date here</div>
             </div>
 
@@ -56,6 +59,7 @@
 
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
     <script src="./map.js" type="module"></script>
+    <script src="./globalCases.js" type="module"></script>
 
 </body>
 
