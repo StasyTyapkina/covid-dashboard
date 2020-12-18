@@ -28,7 +28,48 @@ button:focus {
 
 /* end reset styles */
 
-#map{
+/* #map{
     width: 100vw;
     height: 100vh;
+} */
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template: repeat(5, 20vh) / 1fr 6fr 2fr;
+    background-color: rgb(138, 141, 140);
+}
+.globalCases{
+    grid-area: 1 / 1 / auto / 2;
+    border-radius: 15px;
+    border: 2px solid rgb(189, 9, 9);
+}
+.casesByCountry{
+    grid-area: 2 / 1 / span 4 / 2;
+    border-radius: 15px;
+    border: 2px solid rgb(189, 9, 9);
+}
+.map{
+    grid-area: 1 / 2 / span 5 / 3;
+}
+#map{
+    width: 100%;
+    height: 100%;
+}
+.deathsRecovered{
+    grid-area: 1 / 3 / 4 / 4;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 15px;
+    border: 2px solid rgb(189, 9, 9);
+}
+.globalDeaths{
+}
+.deathsByCountry{
+}
+.diagramm{
+    grid-area: 4 / 3 / 6 / 4;
+    border-radius: 15px;
+    border: 2px solid rgb(189, 9, 9);
 }

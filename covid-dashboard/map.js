@@ -4,7 +4,8 @@ class Map {
   constructor() {
     this.containerForMap = document.createElement('div');
     this.containerForMap.id = 'map';
-    document.body.append(this.containerForMap);
+    this.wrapper = document.querySelector('.map');
+    this.wrapper.append(this.containerForMap);
 
     // const proxyurl = "https://cors-anywhere.herokuapp.com/"; /* TODO сделать собственный cors */
     const url = 'https://corona.lmao.ninja/v2/countries';
