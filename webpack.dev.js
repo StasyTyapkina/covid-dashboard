@@ -8,7 +8,7 @@ module.exports = merge (common, {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].js',
+        filename: `bundle.js`
     },
     devServer: {
       contentBase: path.join(__dirname, 'dist'),
@@ -28,6 +28,8 @@ module.exports = merge (common, {
       ]
     },
     plugins: [
-      new HtmlWebpackPlugin(),
+      new HtmlWebpackPlugin({
+        template: './src/index.html'
+    }),
     ],
 });

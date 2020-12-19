@@ -11,7 +11,7 @@ module.exports = merge (common, {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].[chunkhash].js',
+        filename: `bundle.js`
     },
     module: {
       rules: [
@@ -36,6 +36,10 @@ module.exports = merge (common, {
         new CopyWebpackPlugin([
             {from:'src/img',to:'img'},
         ]),
-        new HtmlWebpackPlugin(),
+        new HtmlWebpackPlugin(
+          {
+            template: './src/index.html'
+        }
+        ),
     ]
 });

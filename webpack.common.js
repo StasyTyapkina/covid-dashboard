@@ -6,7 +6,7 @@ module.exports = {
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js',
+    filename: `bundle.js`
   },
   module: {
     rules: [
@@ -19,7 +19,10 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        use: ["html-loader"]
+        use: {
+          loader: "html-loader",
+          // options: { attrs: ["img:src", "link:href"] }
+        }
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -27,6 +30,7 @@ module.exports = {
           {
             loader: 'url-loader',
             options: {
+              esModule: false,
               name: 'img//[name].[ext]',
               limit: 8192,
               /*fallback: require.resolve('responsive-loader'),
@@ -35,11 +39,6 @@ module.exports = {
           },
         ],
       },
-      // FONT LOADER
-     {
-      test: /\.(woff|woff2|eot|ttf|otf)$/,
-      loader: 'url-loader?limit=1024&name=fonts/[name].[ext]'
-     },
     ],
   },
   devtool: `inline-source-map`,

@@ -1,5 +1,5 @@
 import './css/main.css';
 import './scss/main.scss';
-
-let add = (a, b) => a + b;
-console.log(add(2, 3));
+import './components/chart.js';
+import './components/map.js';
+import './components/globalCases.js'
