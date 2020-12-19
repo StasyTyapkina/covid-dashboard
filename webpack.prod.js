@@ -8,6 +8,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = merge (common, {
     mode: `production`,
+    entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[chunkhash].js',
@@ -35,10 +36,6 @@ module.exports = merge (common, {
         new CopyWebpackPlugin([
             {from:'src/img',to:'img'},
         ]),
-        new HtmlWebpackPlugin({
-            hash: true,
-            template: './src/index.html',
-            filename: './index.html'
-        }),
+        new HtmlWebpackPlugin(),
     ]
 });
