@@ -1,5 +1,6 @@
-class GlobalCases{
-  constructor(){
+/* eslint-disable no-unused-vars */
+class GlobalCases {
+  constructor() {
     this.url = 'https://api.covid19api.com/summary';
     this.globalCases = document.querySelector('#globalCases');
     this.newGlobalCases = document.querySelector('#newGlobalCases');
@@ -7,12 +8,12 @@ class GlobalCases{
     this.globalRecovered = document.querySelector('#globalRecovered');
     this.newDeaths = document.querySelector('#newDeaths');
     this.newRecovered = document.querySelector('#newRecovered');
-    
+
     fetch(this.url)
       .then((response) => response.json())
       .then((data) => {
         const cases = data.Global;
-        console.log(data);
+        // console.log(data);
         this.globalCases.innerHTML = cases.TotalConfirmed;
         this.newGlobalCases.innerHTML = `New Cases: ${cases.NewConfirmed}`;
         this.globalDeaths.innerHTML = cases.TotalDeaths;

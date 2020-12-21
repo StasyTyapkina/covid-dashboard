@@ -9,12 +9,6 @@
     "start": "webpack-dev-server  --config webpack.dev.js --open",
     "build": "webpack --config webpack.prod.js"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run eslint",
-      "pre-push": "npm run eslint"
-    }
-  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
