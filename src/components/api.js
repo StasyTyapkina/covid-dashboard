@@ -1,9 +1,4 @@
-const Method = {
-  GET: 'GET',
-  POST: 'POST',
-  PUT: 'PUT',
-  DELETE: 'DELETE',
-};
+import { END_POINT } from './constants';
 
 const ResponseCode = {
   SUCCESS: 200,
@@ -17,25 +12,18 @@ const checkStatus = (response) => {
   throw new Error(`${response.status}: ${response.statusText}`);
 };
 
-const END_POINT = 'https://api.covid19api.com/';
-
 export default class API {
   constructor() {
     this.endPoint = END_POINT;
   }
 
-  getData(url) {
-    return this.load({ url })
-      .then((response) => response.json())
-      .then(
-        // some func
-      );
+  getSummary() {
+    return this.load({ url: 'summary' })
+      .then((response) => response.json());
   }
 
-  load({
-    url, method = Method.GET, body = null, headers = new Headers(),
-  }) {
-    return fetch(`${this.endPoint}/${url}`, { method, body, headers })
+  load({ url, params }) {
+    return fetch(`${this.endPoint}/${url}`, params)
       .then(checkStatus)
       .catch((err) => {
         throw new Error(`fetch error: ${err}`);

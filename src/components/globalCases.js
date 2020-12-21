@@ -1,30 +1,27 @@
-class GlobalCases {
-  constructor() {
-    this.url = 'https://api.covid19api.com/summary';
-    this.globalCases = document.querySelector('#globalCases');
-    this.newGlobalCases = document.querySelector('#newGlobalCases');
-    this.globalDeaths = document.querySelector('#globalDeaths');
-    this.globalRecovered = document.querySelector('#globalRecovered');
-    this.newDeaths = document.querySelector('#newDeaths');
-    this.newRecovered = document.querySelector('#newRecovered');
+import API from './api';
 
-    fetch(this.url)
-      .then((response) => response.json())
+export default class GlobalCases {
+  constructor(globalCases, newGlobalCases, globalDeaths, globalRecovered, newDeaths, newRecovered) {
+    this.api = new API();
+    this.globalCases = globalCases;
+    this.newGlobalCases = newGlobalCases;
+    this.globalDeaths = globalDeaths;
+    this.globalRecovered = globalRecovered;
+    this.newDeaths = newDeaths;
+    this.newRecovered = newRecovered;
+  }
+
+  renderData() {
+    this.api.getSummary()
       .then((data) => {
-        const cases = data.Global;
         // console.log(data);
+        const cases = data.Global;
         this.globalCases.innerHTML = cases.TotalConfirmed;
         this.newGlobalCases.innerHTML = `New Cases: ${cases.NewConfirmed}`;
         this.globalDeaths.innerHTML = cases.TotalDeaths;
         this.newDeaths.innerHTML = `New Cases: ${cases.NewDeaths}`;
         this.globalRecovered.innerHTML = cases.TotalRecovered;
         this.newRecovered.innerHTML = `New Cases: ${cases.NewRecovered}`;
-      })
-      .catch(() => {
-        throw new Error(`Can’t access ${this.url} response.`);
       });
   }
 }
-
-// const global = new GlobalCases();
-export default GlobalCases;
