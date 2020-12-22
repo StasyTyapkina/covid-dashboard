@@ -1,17 +1,25 @@
-// import { Chart, ChartDataLabels } from 'chart.js';
 import Chart from 'chart.js';
 import 'chartjs-plugin-datalabels';
-// import ChartDataLabels from 'chart.js';
+import API from './api';
 
 export default class StatisticsChart {
   constructor(canvas) {
     this.ctx = canvas.getContext('2d');
     this.chart = null;
+    this.api = new API();
+    this.data = null;
+  }
+
+  getData() {
+    this.api.getAll()
+      .then((data) => {
+        this.data = data;
+        console.log(this.data);
+      });
   }
 
   renderChart() {
     this.chart = new Chart(this.ctx, {
-      // plugins: [ChartDataLabels],
       type: 'line',
       // The data for our dataset
       data: {
@@ -31,7 +39,7 @@ export default class StatisticsChart {
             font: {
               size: 13,
             },
-            color: '#000000',
+            color: 'rgb(233, 161, 161);',
             anchor: 'end',
             align: 'start',
             formatter: (val) => `${val}`,

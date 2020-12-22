@@ -22,10 +22,10 @@ const global = new GlobalCases(globalCases, newGlobalCases,
 global.renderData();
 
 const casesByCountryTable = new CasesByCountry(casesByCountry, btn);
-casesByCountryTable.render();
-// btn.addEventListener('click', casesByCountryTable.btnHandler);
+casesByCountryTable.renderCasesData();
 
 const chart = new StatisticsChart(canvas);
 chart.renderChart();
+// chart.getData();
 
 const bigMap = new Map();

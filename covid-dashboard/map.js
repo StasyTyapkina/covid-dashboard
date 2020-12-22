@@ -6,11 +6,7 @@
 
 class Map {
   constructor() {
-    this.containerForMap = document.createElement('div');
-    this.containerForMap.id = 'map';
-    this.wrapper = document.querySelector('.map');
-    this.wrapper.append(this.containerForMap);
-
+   
     const url = 'https://corona.lmao.ninja/v2/countries';
 
     const mapbox_token = 'pk.eyJ1IjoidHlhcGtpbmEiLCJhIjoiY2tpc21rZHo1MHlzbTJ0bnl3dm1hcHB5dyJ9.Y-85A8m0cHc6u4PEow2Xgg';
@@ -23,9 +19,8 @@ class Map {
       center: [0, 20],
     });
 
-    this.map.addControl(new mapboxgl.FullscreenControl({
-      container: document.querySelector('body'),
-    })); // разворачивает карту на полный экран
+
+    this.map.addControl(new mapboxgl.FullscreenControl()); // разворачивает карту на полный экран
     this.map.addControl(new mapboxgl.NavigationControl()); // кнопки масштабирования и компас
 
     let cases = [];
@@ -34,8 +29,7 @@ class Map {
       .then((response) => response.json())
       .then((data) => {
         cases = data;
-        // console.log(data);
-
+        
         cases.forEach((country) => {
           const {
             active,
