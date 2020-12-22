@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 // import Chart from 'chart.js';
 // import ChartDataLabels from 'chart.js';
 
