@@ -10,10 +10,10 @@ const DATA_URL = 'https://corona.lmao.ninja/v2/countries';
 
 export default class Map {
   constructor() {
-    this.containerForMap = document.createElement('div');
-    this.containerForMap.id = 'map';
-    this.wrapper = document.querySelector('.map');
-    this.wrapper.append(this.containerForMap);
+    // this.containerForMap = document.createElement('div');
+    // this.containerForMap.id = 'map';
+    // this.wrapper = document.querySelector('.map');
+    // this.wrapper.append(this.containerForMap);
 
     mapboxgl.accessToken = MAPBOX_TOKEN;
 
