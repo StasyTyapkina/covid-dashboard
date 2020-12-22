@@ -14,7 +14,6 @@ export default class GlobalCases {
   renderData() {
     this.api.getSummary()
       .then((data) => {
-        // console.log(data);
         const cases = data.Global;
         this.globalCases.innerHTML = cases.TotalConfirmed;
         this.newGlobalCases.innerHTML = `New Cases: ${cases.NewConfirmed}`;

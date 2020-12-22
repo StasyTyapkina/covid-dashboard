@@ -6,4 +6,4 @@ export const MAP_COLORS = {
   gray: 'gray',
 };
 
-export const END_POINT = 'https://api.covid19api.com/';
+export const END_POINT = 'https://api.covid19api.com';

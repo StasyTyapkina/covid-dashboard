@@ -1,78 +1,64 @@
 import API from './api';
 
-/* eslint-disable no-unused-vars */
 export default class CasesByCountry {
   constructor(casesByCountry, btn) {
     this.api = new API();
     this.casesByCountry = casesByCountry;
     this.btn = btn;
+    this.cases = [];
+    this.casesNew = [];
+  }
+
+  render() {
+    this.api.getSummary()
+      .then((data) => {
+        this.cases = Array.from(data.Countries)
+          .sort((a, b) => b.TotalConfirmed - a.TotalConfirmed);
+        this.casesNew = Array.from(data.Countries)
+          .sort((a, b) => b.NewConfirmed - a.NewConfirmed);
+
+        const c = this;
+        c.btn.addEventListener('click', c.btnHandler);
+        window.addEventListener('load', c.showCases(c.cases));
+      });
+  }
+
+  btnHandler(event) {
+    const c = this;
+    if (event.target.innerHTML === 'all') {
+      c.btn.innerHTML = 'today';
+      this.showCases(c.cases);
+    } else if (event.target.innerHTML === 'today') {
+      c.btn.innerHTML = 'all';
+      this.showCases(c.casesNew);
+    }
+  }
+
+  showCases(cases) {
+    this.cleanBox();
+
+    Array.from(cases).forEach((country) => {
+      const line = document.createElement('div');
+      const count = document.createElement('p');
+      const name = document.createElement('p');
+
+      line.classList.add('line');
+      count.classList.add('count');
+      if (this.btn.innerHTML === 'all') {
+        count.innerHTML = country.NewConfirmed;
+      } else if (this.btn.innerHTML === 'today') {
+        count.innerHTML = country.TotalConfirmed;
+      }
+
+      name.innerHTML = country.Country;
+
+      line.append(count);
+      line.append(name);
+      this.casesByCountry.append(line);
+    });
   }
 
   cleanBox() {
     this.casesByCountry.innerHTML = '';
-    // while (this.casesByCountry.firstChild) {
-    //   this.casesByCountry.removeChild(this.casesByCountry.firstChild);
-    // }
-  }
-
-  renderCasesData() {
-    this.api.getSummary()
-      .then((data) => {
-        // console.log(data);
-        const cases = Array.from(data.Countries)
-          .sort((a, b) => b.TotalConfirmed - a.TotalConfirmed);
-        const casesNew = Array.from(data.Countries)
-          .sort((a, b) => b.NewConfirmed - a.NewConfirmed);
-        // console.log(data.Countries);
-        const c = this;
-        Array.from(cases).forEach((country) => {
-          const line = document.createElement('div');
-          const count = document.createElement('p');
-          const name = document.createElement('p');
-          line.classList.add('line');
-          count.classList.add('count');
-          count.innerHTML = country.TotalConfirmed;
-          name.innerHTML = country.Country;
-          line.append(count);
-          line.append(name);
-          c.casesByCountry.append(line);
-        });
-
-        function btnHandler() {
-          if (c.btn.innerHTML === 'all') {
-            c.btn.innerHTML = 'today';
-            c.cleanBox();
-            Array.from(cases).forEach((country) => {
-              const line = document.createElement('div');
-              const count = document.createElement('p');
-              const name = document.createElement('p');
-              line.classList.add('line');
-              count.classList.add('count');
-              count.innerHTML = country.TotalConfirmed;
-              name.innerHTML = country.Country;
-              line.append(count);
-              line.append(name);
-              c.casesByCountry.append(line);
-            });
-          } else if (c.btn.innerHTML === 'today') {
-            c.btn.innerHTML = 'all';
-            c.cleanBox();
-            Array.from(casesNew).forEach((country) => {
-              const line = document.createElement('div');
-              const count = document.createElement('p');
-              const name = document.createElement('p');
-              line.classList.add('line');
-              count.classList.add('count');
-              count.innerHTML = country.NewConfirmed;
-              name.innerHTML = country.Country;
-              line.append(count);
-              line.append(name);
-              c.casesByCountry.append(line);
-            });
-          }
-        }
-
-        this.btn.addEventListener('click', btnHandler);
-      });
   }
 }
