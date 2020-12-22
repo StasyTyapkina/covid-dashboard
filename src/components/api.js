@@ -1,4 +1,4 @@
-import { END_POINT } from './constants';
+import { END_POINT, X_ACCESS_TOKEN } from './constants';
 
 const ResponseCode = {
   SUCCESS: 200,
@@ -15,15 +15,23 @@ const checkStatus = (response) => {
 export default class API {
   constructor() {
     this.endPoint = END_POINT;
+    this.accessToken = X_ACCESS_TOKEN;
   }
 
   getSummary() {
-    return this.load({ url: 'summary' })
+    return this.load({ url: 'summary',
+    headers: new Headers({'Content-Type': `application/json`}) })
       .then((response) => response.json());
   }
 
-  load({ url, params }) {
-    return fetch(`${this.endPoint}/${url}`, params)
+  getAll() {
+    return this.load({ url: 'all',
+    headers: new Headers({'Content-Type': `application/json`}) })
+      .then((response) => response.json());
+  }
+
+  load({ url, headers = new Headers() }) {
+    return fetch(`${this.endPoint}/${url}`, { headers })
       .then(checkStatus)
       .catch((err) => {
         throw new Error(`fetch error: ${err}`);

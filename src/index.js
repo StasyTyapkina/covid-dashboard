@@ -16,12 +16,13 @@ const globalCases = document.querySelector('#globalCases'),
       canvas = document.querySelector('#myChart');
 
 const global = new GlobalCases(globalCases, newGlobalCases, globalDeaths, globalRecovered, newDeaths, newRecovered);
-// global.renderData();      
+global.renderData();      
 
 const casesByCountryTable = new CasesByCountry(casesByCountry, btn);
-// casesByCountryTable.renderCasesData();
+casesByCountryTable.renderCasesData();
 
 const chart = new StatisticsChart(canvas);
 chart.renderChart();
+// chart.getData();
 
 const bigMap = new Map();
