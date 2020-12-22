@@ -22,7 +22,7 @@ const global = new GlobalCases(globalCases, newGlobalCases,
 global.renderData();
 
 const casesByCountryTable = new CasesByCountry(casesByCountry, btn);
-casesByCountryTable.renderCasesData();
+casesByCountryTable.render();
 
 const chart = new StatisticsChart(canvas);
 chart.renderChart();
