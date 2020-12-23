@@ -24,9 +24,7 @@ export default class Map {
       center: [0, 20],
     });
 
-    this.map.addControl(new mapboxgl.FullscreenControl({
-      container: document.querySelector('body'),
-    })); // разворачивает карту на полный экран
+    this.map.addControl(new mapboxgl.FullscreenControl()); // разворачивает карту на полный экран
     this.map.addControl(new mapboxgl.NavigationControl()); // кнопки масштабирования и компас
 
     let cases = [];
@@ -82,10 +80,10 @@ export default class Map {
   } // end constructor
 
   getMarkerColorFromCount(count) {
-    if (count >= 100) {
+    if (count >= 10000) {
       return MAP_COLORS.red;
     }
-    if (count >= 10) {
+    if (count >= 1000) {
       return MAP_COLORS.blue;
     }
     return MAP_COLORS.gray;

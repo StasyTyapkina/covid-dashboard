@@ -18,19 +18,18 @@ export default class CasesByCountry {
           .sort((a, b) => b.NewConfirmed - a.NewConfirmed);
 
         const c = this;
-        c.btn.addEventListener('click', c.btnHandler);
+        c.btn.addEventListener('click', c.btnHandler.bind(this));
         window.addEventListener('load', c.showCases(c.cases));
       });
   }
 
-  btnHandler(event) {
-    const c = this;
-    if (event.target.innerHTML === 'all') {
-      c.btn.innerHTML = 'today';
-      this.showCases(c.cases);
-    } else if (event.target.innerHTML === 'today') {
-      c.btn.innerHTML = 'all';
-      this.showCases(c.casesNew);
+  btnHandler() {
+    if (this.btn.innerHTML === 'all') {
+      this.btn.innerHTML = 'today';
+      this.showCases(this.cases);
+    } else {
+      this.btn.innerHTML = 'all';
+      this.showCases(this.casesNew);
     }
   }
 
