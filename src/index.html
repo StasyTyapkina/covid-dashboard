@@ -32,19 +32,20 @@
         <div class="map" id="map"></div>
 
         <div class="deathsRecovered cases">
-            <div class="globalDeaths">
-                <span class="headers">Global Deaths</span>
-                <div id="globalDeaths">1665211</div>
-                <div id="newDeaths">date here</div>
-                <button class="today global-deaths-recovered">today</button>
-                <div id="dethsCasesByCountry">date here</div>
-            </div>
-            <div class="globalRecovered hide">
-                <span class="headers">Global Recovered</span>
-                <div id="globalRecovered">date here</div>
-                <div id="newRecovered">date here</div>
-                <button class="today global-deaths-recovered">today</button>
-                <div id="recoveredCasesByCountry">date here</div>
+            <div class="wrapper">
+                <input type="radio" name="dr" id="deaths" value="deaths" checked="true">
+                <label for="deaths">Deaths</label>
+                <input type="radio" name="dr" id="recovered" value="recovered">
+                <label for="recovered">Recovered</label>
+                <div class="globalDeaths">
+                    <span class="headers" id="nameBlock">Global Deaths</span>
+                    <div id="globalDeaths">date here</div>
+                    <div id="newDeaths">date here</div>
+                    <button class="today global-deaths-recovered">today</button>
+                    <div class="wrap">
+                        <div id="deathsCasesByCountry">date here</div>
+                    </div>
+                </div>
             </div>
 
             <div class="statsByCountry">
@@ -53,12 +54,13 @@
                 <div id="statsByCountry">date here</div>
             </div>
         </div>
+
         <div class="diagramm cases">
-            <!--diagramm here-->
             <canvas id="myChart" width="400" height="300"></canvas>
         </div>
     </main>
-    <script src="bundle.js"></script>
+
+    <!-- <script src="bundle.js"></script> -->
 </body>
 
 </html>

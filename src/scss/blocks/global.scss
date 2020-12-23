@@ -173,27 +173,47 @@ h2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
-.hide {
-  display: none;
-}
+// .hide {
+//   display: none;
+// }
 
-/* Global Deaths */
-.globalDeaths #globalDeaths {
-  font-size: 2rem;
+/* Global Deaths/Recovered */
+.globalDeaths {
+  #globalDeaths {
+    font-size: 2rem;
+    color: coral;
+  }
+  #newDeaths {
+    color: coral;
+  }
+}
+.globalRecovered {
+  #globalDeaths {
+    font-size: 2rem;
+    color:  rgb(127, 255, 0);
+  }
+  #newDeaths {
+    color:  rgb(127, 255, 0);
+  }
+}
+label[for="deaths"] {
   color: coral;
 }
-#newDeaths {
-  color: coral;
+label[for="recovered"] {
+  color:  rgb(127, 255, 0);
+}
+.wrap{
+  overflow: hidden;
 }
 
 /* Global Recovered */
-.globalRecovered #globalRecovered {
-  font-size: 2rem;
-  color: rgb(127, 255, 0);
-}
-#newRecovered {
-  color: rgb(127, 255, 0);
-}
+// .globalRecovered #globalRecovered {
+//   font-size: 2rem;
+//   color: rgb(127, 255, 0);
+// }
+// #newRecovered {
+//   color: rgb(127, 255, 0);
+// }
 
 /* Stats by Country */
 .statsByCountry {
