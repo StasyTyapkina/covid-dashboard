@@ -30,6 +30,32 @@ button:focus {
 
 /* end reset styles */
 
+::-webkit-scrollbar-button {
+  width:6px;
+  height:0px
+}
+  
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  box-shadow:0px 0px 3px #000 inset;
+}
+  
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-color: rgb(106, 107, 107);
+  box-shadow:0px 1px 1px #fff inset;
+}
+  
+::-webkit-resizer{
+  width:7px;
+  height:0px
+}
+  
+::-webkit-scrollbar{
+  width: 11px;
+}
+
 body {
   background-color: rgb(52, 53, 53);
   color: rgb(250, 253, 253);
