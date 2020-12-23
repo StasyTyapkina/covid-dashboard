@@ -1,4 +1,3 @@
-/* eslint-disable no-plusplus */
 import API from './api';
 
 export default class CasesByCountry {
@@ -68,7 +67,7 @@ export default class CasesByCountry {
   addFullScreen() {
     let buttonElement = document.querySelectorAll('.bttn_full_screen');
     let elem = document.querySelectorAll('.cases');
-    for (let i = 0; i < buttonElement.length; i++) {
+    for (let i = 0; i < buttonElement.length; i += 1) {
       buttonElement[i].addEventListener('click', () => {
         if (!document.fullscreenElement) {
           elem.[i].requestFullscreen();

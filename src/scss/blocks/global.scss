@@ -70,93 +70,6 @@ header {
   font-size: 2rem;
   font-weight: 800;
 }
-
-/* footer */
-.footer {
-  width: 100%;
-  min-height: 2vh;
-  font-size: 1rem;
-  font-weight: 800;
-  padding: 0.2rem;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.contributors,
-.school {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 50%;
-  padding-bottom: 20px;
-  border-radius: 15px;
-  border: 2px solid #bd0909;
-}
-
-.school {
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.contributors-title {
-  color: rgb(230, 0, 0);
-  font-size: 1.2rem;
-  font-weight: 400;
-  padding: 1em;
-  margin-right: 20px;
-}
-
-.contributors-list {
-  margin: 0;
-  padding: 0;
-  padding-top: 5px;
-  list-style: none;
-}
-
-.contributors-item {
-  margin: 0;
-  padding: 0;
-  text-align: left;
-}
-
-.contributors-link,
-.school-link {
-  display: block;
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 400;
-  padding: 0.7em;
-
-  &:hover,
-  &:focus {
-    color: rgb(233, 161, 161); 
-  }
-
-  &:active {
-    opacity: 0.8;
-  }
-}
-
-.school-link {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.school-logo {
-  width: 100px;
-  height: 100px;
-  margin-right: 20px;
-}
-
-.school-year {
-  color: rgba(255, 255, 255, 0.8);
-  margin-left: 20px;
-  letter-spacing: 2px;
-}
-
 .logo {
   height: 80%;
 }
@@ -164,9 +77,9 @@ header {
 /* main */
 main {
   width: 100vw;
-  height: 95vh;
+  height: 85vh;
   display: grid;
-  grid-template: repeat(5, 19vh) / 2fr 6fr 3fr;
+  grid-template: repeat(5, 17vh) / 2fr 6fr 3fr;
   background-color: rgb(63, 63, 65);
   text-shadow: 3px 2px 3px rgba(255, 255, 255, 0.2);
 }
@@ -239,30 +152,23 @@ main {
 .map {
   grid-area: 1 / 2 / span 5 / 3;
 }
-#map {
-  // width: 100%;
-  // height: 100%;
-}
 .mapboxgl-popup {
-    max-width: 350px;
-    color: rgb(0, 0, 0);
+  max-width: 350px;
+  color: rgb(0, 0, 0);
 }
 h2 {
-    font-size: 1.5em;
-    line-height: 1.2;
-    margin-bottom: .1em;
-    margin-top: 0;
+  font-size: 1.5em;
+  line-height: 1.2;
+  margin-bottom: .1em;
+  margin-top: 0;
 }
 
 /* Deaths/Recovered */
 .deathsRecovered {
   grid-area: 1 / 3 / 4 / 4;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr repeat(2, 10fr);
 }
-// .hide {
-//   display: none;
-// }
 
 /* Global Deaths/Recovered */
 .globalDeaths {
@@ -292,15 +198,6 @@ label[for="recovered"] {
 .wrap{
   overflow: hidden;
 }
-
-/* Global Recovered */
-// .globalRecovered #globalRecovered {
-//   font-size: 2rem;
-//   color: rgb(127, 255, 0);
-// }
-// #newRecovered {
-//   color: rgb(127, 255, 0);
-// }
 
 /* Stats by Country */
 .statsByCountry {
@@ -332,4 +229,79 @@ label[for="recovered"] {
 .full_screen_img{
   width: 15px;
   height: 15px;
+}
+
+/* footer */
+.footer {
+  height: 10vh;
+  font-size: 1rem;
+  font-weight: 800;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  .contributors{
+    height: 10vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0.2rem;
+    border-radius: 15px;
+    border: 2px solid rgb(189, 9, 9);
+
+    .contributors-title{
+      grid-area: 1 / 1 / 2 / 4;
+      font-size: 1.2rem;
+      color: rgb(230, 0, 0);
+    }
+
+    .contributors-list{
+      grid-area: 2 / 1 / 3 / 4;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .school{
+    height: 10vh;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    padding: 0.2rem;
+    border-radius: 15px;
+    border: 2px solid rgb(189, 9, 9);
+
+    .school-link {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+      justify-items: center;
+
+      .school-logo {
+        height: 5vh;
+      }
+    }
+
+    .school-year {
+      color:rgba(250, 253, 253, .8);
+      letter-spacing: 2px;
+    }
+  }
+}
+
+.contributors-link,
+.school-link {
+  color:rgba(250, 253, 253, .8);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0.5rem;
+
+  &:hover,
+  &:focus {
+    color: rgb(233, 161, 161); 
+  }
+
+  &:active {
+    opacity: .8;
+  }
 }

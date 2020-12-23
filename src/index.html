@@ -10,10 +10,14 @@
 </head>
 
 <body>
-   
+    <header>
+        <img src="./img/covid-icon.png" alt="covid-icon" class="logo">
+        COVID-19 Dashboard
+    </header>
+
     <main>
         <div class="globalCases cases">
-            <button class = 'bttn_full_screen'>
+            <button class='bttn_full_screen'>
                 <img src="./img/expand-arrows-alt-solid.svg" class="full_screen_img">
             </button>
             <span class="headers">Global Cases</span>
@@ -22,14 +26,10 @@
         </div>
 
         <div class="casesByCountry cases">
-<<<<<<< HEAD
-            <span class="headers">Cases by
-=======
-            <button class = 'bttn_full_screen'>
+            <button class='bttn_full_screen'>
                 <img src="./img/expand-arrows-alt-solid.svg" class="full_screen_img">
             </button>
-            <span class="headers">Cases by 
->>>>>>> 1310348f1cea746eccf8b1ffe6f471e265ebd501
+            <span class="headers">Cases by
                 Country/Region/Sovereignty
             </span>
             <button class="today" id="todayGlobal">today</button>
@@ -39,7 +39,9 @@
         <div class="map" id="map"></div>
 
         <div class="deathsRecovered cases">
-<<<<<<< HEAD
+            <button class='bttn_full_screen'>
+                <img src="./img/expand-arrows-alt-solid.svg" class="full_screen_img">
+            </button>
             <div class="wrapper">
                 <input type="radio" name="dr" id="deaths" value="deaths" checked="true">
                 <label for="deaths">Deaths</label>
@@ -54,24 +56,6 @@
                         <div id="deathsCasesByCountry">date here</div>
                     </div>
                 </div>
-=======
-            <button class = 'bttn_full_screen'>
-                <img src="./img/expand-arrows-alt-solid.svg" class="full_screen_img">
-            </button>
-            <div class="globalDeaths">
-                <span class="headers">Global Deaths</span>
-                <div id="globalDeaths">1665211</div>
-                <div id="newDeaths">date here</div>
-                <button class="today global-deaths-recovered">today</button>
-                <div id="dethsCasesByCountry">date here</div>
-            </div>
-            <div class="globalRecovered hide">
-                <span class="headers">Global Recovered</span>
-                <div id="globalRecovered">date here</div>
-                <div id="newRecovered">date here</div>
-                <button class="today global-deaths-recovered">today</button>
-                <div id="recoveredCasesByCountry">date here</div>
->>>>>>> 1310348f1cea746eccf8b1ffe6f471e265ebd501
             </div>
 
             <div class="statsByCountry">
@@ -82,13 +66,9 @@
         </div>
 
         <div class="diagramm cases">
-<<<<<<< HEAD
-=======
-            <button class = 'bttn_full_screen'>
+            <button class='bttn_full_screen'>
                 <img src="./img/expand-arrows-alt-solid.svg" class="full_screen_img">
             </button>
-            <!--diagramm here-->
->>>>>>> 1310348f1cea746eccf8b1ffe6f471e265ebd501
             <canvas id="myChart" width="400" height="300"></canvas>
         </div>
     </main>
