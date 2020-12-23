@@ -14,7 +14,6 @@ export default class StatisticsChart {
     this.api.getAll()
       .then((data) => {
         this.data = data;
-        console.log(this.data);
       });
   }
 

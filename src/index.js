@@ -31,7 +31,9 @@ const global = new GlobalCases(globalCases, newGlobalCases,
   wrapper, nameBlock, btnDR);
 global.renderData();
 
-const casesByCountryTable = new CasesByCountry(casesByCountry, btn);
+const buttonElements = document.querySelectorAll('.bttn_full_screen');
+const elems = document.querySelectorAll('.cases');
+const casesByCountryTable = new CasesByCountry(casesByCountry, btn, buttonElements, elems);
 casesByCountryTable.render();
 
 const chart = new StatisticsChart(canvas);

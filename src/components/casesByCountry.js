@@ -1,10 +1,12 @@
 import API from './api';
 
 export default class CasesByCountry {
-  constructor(casesByCountry, btn) {
+  constructor(casesByCountry, btn, buttonElements, elems) {
     this.api = new API();
     this.casesByCountry = casesByCountry;
     this.btn = btn;
+    this.buttonElements = buttonElements;
+    this.elems = elems;
     this.cases = [];
     this.casesNew = [];
 
@@ -65,12 +67,11 @@ export default class CasesByCountry {
   }
 
   addFullScreen() {
-    let buttonElement = document.querySelectorAll('.bttn_full_screen');
-    let elem = document.querySelectorAll('.cases');
-    for (let i = 0; i < buttonElement.length; i += 1) {
-      buttonElement[i].addEventListener('click', () => {
+    const self = this;
+    for (let i = 0; i < self.buttonElements.length; i += 1) {
+      self.buttonElements[i].addEventListener('click', () => {
         if (!document.fullscreenElement) {
-          elem.[i].requestFullscreen();
+          this.elems[i].requestFullscreen();
         } else {
           document.exitFullscreen();
         }
