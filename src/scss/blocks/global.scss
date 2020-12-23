@@ -11,7 +11,7 @@ figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, su
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
-    border: 0;
+  border: 0;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -70,6 +70,93 @@ header {
   font-size: 2rem;
   font-weight: 800;
 }
+
+/* footer */
+.footer {
+  width: 100%;
+  min-height: 2vh;
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 0.2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contributors,
+.school {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 50%;
+  padding-bottom: 20px;
+  border-radius: 15px;
+  border: 2px solid #bd0909;
+}
+
+.school {
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.contributors-title {
+  color: rgb(230, 0, 0);
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding: 1em;
+  margin-right: 20px;
+}
+
+.contributors-list {
+  margin: 0;
+  padding: 0;
+  padding-top: 5px;
+  list-style: none;
+}
+
+.contributors-item {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.contributors-link,
+.school-link {
+  display: block;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0.7em;
+
+  &:hover,
+  &:focus {
+    color: rgb(233, 161, 161); 
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+.school-link {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.school-logo {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+}
+
+.school-year {
+  color: rgba(255, 255, 255, 0.8);
+  margin-left: 20px;
+  letter-spacing: 2px;
+}
+
 .logo {
   height: 80%;
 }

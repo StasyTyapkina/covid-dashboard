@@ -19,33 +19,20 @@ export default class CasesByCountry {
 
         const c = this;
 
-        function btnHandler(event) {
-          const el = event.target;
-
-          if (el.innerHTML === 'all') {
-            el.innerHTML = 'today';
-            c.showCases(c.cases);
-          } else if (el.innerHTML === 'today') {
-            el.innerHTML = 'all';
-            c.showCases(c.casesNew);
-          }
-        }
-
-        c.btn.addEventListener('click', btnHandler);
+        c.btn.addEventListener('click', c.btnHandler.bind(this));
         window.addEventListener('load', c.showCases(c.cases));
       });
   }
 
-  // btnHandler(event) {
-  //   const c = this;
-  //   if (event.target.innerHTML === 'all') {
-  //     c.btn.innerHTML = 'today';
-  //     this.showCases(c.cases);
-  //   } else if (event.target.innerHTML === 'today') {
-  //     c.btn.innerHTML = 'all';
-  //     this.showCases(c.casesNew);
-  //   }
-  // }
+  btnHandler() {
+    if (this.btn.innerHTML === 'all') {
+      this.btn.innerHTML = 'today';
+      this.showCases(this.cases);
+    } else {
+      this.btn.innerHTML = 'all';
+      this.showCases(this.casesNew);
+    }
+  }
 
   showCases(cases) {
     this.cleanBox();

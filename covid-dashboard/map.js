@@ -22,7 +22,7 @@ class Map {
 
     this.map.addControl(new mapboxgl.FullscreenControl()); // разворачивает карту на полный экран
     this.map.addControl(new mapboxgl.NavigationControl()); // кнопки масштабирования и компас
-
+    
     let cases = [];
 
     fetch(url)
