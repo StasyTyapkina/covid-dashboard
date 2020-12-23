@@ -10,18 +10,21 @@
 </head>
 
 <body>
-    <header>
-        <img src="./img/covid-icon.png" alt="covid-icon" class="logo">
-        COVID-19 Dashboard
-    </header>
+   
     <main>
         <div class="globalCases cases">
+            <button class = 'bttn_full_screen'>
+                <img src="./img/expand-arrows-alt-solid.svg" class="full_screen_img">
+            </button>
             <span class="headers">Global Cases</span>
             <div id="globalCases">date here</div>
             <div id="newGlobalCases">date here</div>
         </div>
 
         <div class="casesByCountry cases">
+            <button class = 'bttn_full_screen'>
+                <img src="./img/expand-arrows-alt-solid.svg" class="full_screen_img">
+            </button>
             <span class="headers">Cases by 
                 Country/Region/Sovereignty
             </span>
@@ -32,6 +35,9 @@
         <div class="map" id="map"></div>
 
         <div class="deathsRecovered cases">
+            <button class = 'bttn_full_screen'>
+                <img src="./img/expand-arrows-alt-solid.svg" class="full_screen_img">
+            </button>
             <div class="globalDeaths">
                 <span class="headers">Global Deaths</span>
                 <div id="globalDeaths">1665211</div>
@@ -54,6 +60,9 @@
             </div>
         </div>
         <div class="diagramm cases">
+            <button class = 'bttn_full_screen'>
+                <img src="./img/expand-arrows-alt-solid.svg" class="full_screen_img">
+            </button>
             <!--diagramm here-->
             <canvas id="myChart" width="400" height="300"></canvas>
         </div>
